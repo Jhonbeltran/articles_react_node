@@ -24258,11 +24258,15 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _About = __webpack_require__(212);
+	var _Post = __webpack_require__(212);
 
-	var _About2 = _interopRequireDefault(_About);
+	var _Post2 = _interopRequireDefault(_Post);
 
-	var _Error = __webpack_require__(213);
+	var _Profile = __webpack_require__(213);
+
+	var _Profile2 = _interopRequireDefault(_Profile);
+
+	var _Error = __webpack_require__(214);
 
 	var _Error2 = _interopRequireDefault(_Error);
 
@@ -24278,9 +24282,14 @@
 	      component: _Home2.default
 	    }),
 	    _react2.default.createElement(_reactRouter.Match, {
-	      pattern: '/about',
+	      pattern: '/post/:id',
 	      exactly: true,
-	      component: _About2.default
+	      component: _Post2.default
+	    }),
+	    _react2.default.createElement(_reactRouter.Match, {
+	      pattern: '/user/:id',
+	      exactly: true,
+	      component: _Profile2.default
 	    }),
 	    _react2.default.createElement(_reactRouter.Miss, {
 	      component: _Error2.default
@@ -24320,8 +24329,8 @@
 	      ),
 	      _react2.default.createElement(
 	        _reactRouter.Link,
-	        { to: '/About' },
-	        'Go to about'
+	        { to: '/post/:id' },
+	        'Go to Post'
 	      )
 	    );
 	  }
@@ -24347,19 +24356,19 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	class About extends _react.Component {
+	class Post extends _react.Component {
 	  render() {
 	    return _react2.default.createElement(
 	      'section',
-	      { name: 'about' },
+	      { name: 'post' },
 	      _react2.default.createElement(
 	        'h1',
 	        null,
-	        'About'
+	        'Post'
 	      ),
 	      _react2.default.createElement(
 	        _reactRouter.Link,
-	        { to: '/Home' },
+	        { to: '/' },
 	        'Go to Home'
 	      ),
 	      _react2.default.createElement(
@@ -24371,10 +24380,54 @@
 	  }
 	}
 
-	exports.default = About;
+	exports.default = Post;
 
 /***/ },
 /* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(172);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	class Profile extends _react.Component {
+	  render() {
+	    return _react2.default.createElement(
+	      'section',
+	      { name: 'profile' },
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'Profile'
+	      ),
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/' },
+	        'Go to Home'
+	      ),
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/random' },
+	        'Go to random'
+	      )
+	    );
+	  }
+	}
+
+	exports.default = Profile;
+
+/***/ },
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24403,7 +24456,7 @@
 	      ),
 	      _react2.default.createElement(
 	        _reactRouter.Link,
-	        { to: '/Home' },
+	        { to: '/' },
 	        'Go back to home'
 	      )
 	    );

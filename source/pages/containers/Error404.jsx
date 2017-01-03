@@ -6,7 +6,7 @@ class Error404 extends Component {
     return (
       <section name="error404">
         <h1>Error 404</h1>
-        <Link to="/Home">Go back to home</Link>
+        <Link to="/">Go back to home</Link>
       </section>
     )
   }
